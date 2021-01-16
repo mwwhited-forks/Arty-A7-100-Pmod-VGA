@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Jul 16 12:35:42 2020
+# Process ID: 20668
+# Current directory: C:/Users/eibraim/AppData/Roaming/Xilinx/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13900
+# Log file: C:/Users/eibraim/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file: C:/Users/eibraim/AppData/Roaming/Xilinx/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+set argv "-r C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/HDMI"
+source ./digilent-vivado-scripts/digilent_vivado_checkin.tcl
+cd C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/HDMI
+cd C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/HDMI
+C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA
+set argv "-r C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA"
+ls
+cd C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/digilent-vivado-scripts/
+ls
+source digilent_vivado_checkin.tcl
+update_compile_order -fileset sources_1
+close_project
+source digilent_vivado_checkout.tcl
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+archive_project C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/Arty-A7-100-Pmod-VGA-2020-1.xpr.zip -temp_dir C:/Users/eibraim/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20668-ROCLULT-1L1Y2Y0 -force -include_local_ip_cache -include_config_settings

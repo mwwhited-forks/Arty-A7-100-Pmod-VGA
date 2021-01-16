@@ -15,7 +15,7 @@
 !digilent-vivado-scripts/
 
 # vivado workspace
-proj/*
+!proj/*
 
 # ip repository
 repo/**
@@ -63,3 +63,4 @@ src/ip/*/**
 
 # maintain required directories
 !**/.keep
+*.gen/
