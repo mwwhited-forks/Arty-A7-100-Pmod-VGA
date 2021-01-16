@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.runs/impl_1/top.tcl"
+  variable script "C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -112,16 +112,17 @@ proc step_failed { step } {
   set endFile ".$step.error.rst"
   set ch [open $endFile w]
   close $ch
+OPTRACE "impl_1" END { }
 }
 
 
-OPTRACE "Implementation" START { ROLLUP_1 }
+OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
+  set_param chipscope.maxJobs 2
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:arty-a7-100:part0:1.0 [current_project]
@@ -129,19 +130,19 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.cache/wt [current_project]
-  set_property parent.project_path C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.xpr [current_project]
-  set_property ip_repo_paths C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/repo [current_project]
+  set_property webtalk.parent_dir C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.cache/wt [current_project]
+  set_property parent.project_path C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.xpr [current_project]
+  set_property ip_repo_paths C:/../../../../Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/repo [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/cache [current_project]
+  set_property ip_output_repo C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.runs/synth_1/top.dcp
-  read_ip -quiet C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/src/ip/clk_wiz_0/clk_wiz_0.xci
+  add_files -quiet C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.runs/synth_1/top.dcp
+  read_ip -quiet C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/src/constraints/Arty_Master.xdc
+  read_xdc C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.srcs/constrs_1/imports/constraints/Arty_Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
@@ -307,7 +308,7 @@ set rc [catch {
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
   set_property XPM_LIBRARIES XPM_CDC [current_project]
-  catch { write_mem_info -force top.mmi }
+  catch { write_mem_info -force -no_partial_mmi top.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
   write_bitstream -force top.bit 
@@ -329,4 +330,4 @@ if {$rc} {
 
 OPTRACE "write_bitstream misc" END { }
 OPTRACE "Phase: Write Bitstream" END { }
-OPTRACE "Implementation" END { }
+OPTRACE "impl_1" END { }

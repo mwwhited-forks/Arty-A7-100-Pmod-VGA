@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:c:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/src/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc rfile:../../../../src/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc id:1 order:EARLY scoped_inst:clk_div_inst} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/eibraim/Desktop/RepoUpdates/Arty-A7-100/VGA/Arty-A7-100-Pmod-VGA/src/constraints/Arty_Master.xdc rfile:../../../../src/constraints/Arty_Master.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc rfile:../../../Arty-A7-100-Pmod-VGA.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc id:1 order:EARLY scoped_inst:clk_div_inst} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Repos/mwwhited-forks/Arty-A7-100-Pmod-VGA/proj/Arty-A7-100-Pmod-VGA.srcs/constrs_1/imports/constraints/Arty_Master.xdc rfile:../../../Arty-A7-100-Pmod-VGA.srcs/constrs_1/imports/constraints/Arty_Master.xdc id:2} [current_design]
 current_instance clk_div_inst
 set_property src_info {type:SCOPED_XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 create_clock -period 10.000 [get_ports -no_traverse {}]
